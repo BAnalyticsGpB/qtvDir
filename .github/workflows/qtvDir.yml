@@ -3,11 +3,11 @@
 # You can adjust the behavior by modifying this file.
 # For more information, see:
 # https://github.com/actions/stale
-name: Mark stale issues and pull requests
+name: qtv auto
 
 on:
   schedule:
-  - cron: '0 0 * * *'
+  - cron: '6 * * * *'
 
 jobs:
   stale:
@@ -25,3 +25,4 @@ jobs:
         stale-pr-message: 'Stale pull request message'
         stale-issue-label: 'no-issue-activity'
         stale-pr-label: 'no-pr-activity'
+   
