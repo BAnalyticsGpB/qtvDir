@@ -35,7 +35,7 @@ jobs:
         git config --global push.default simple
         git status
         git remote rm origin
-        git remote add origin https://github.com/BAnalyticsGpB/qtvDir.git
+        git remote add origin https://BAnalyticsGpB:$GH_token_public_repo@github.com/BAnalyticsGpB/qtvDir.git
         echo "====================================="
         git add Data/*/*.xml
         git status
