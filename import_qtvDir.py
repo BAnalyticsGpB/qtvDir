@@ -15,7 +15,7 @@ print(today)
 conn = pymysql.connect(host="http://etu-web2.ut-capitole.fr/",
                        user="21806554",
                        passwd="T006I0",
-                       db="ed_bisonfute",
+                       db="db_21806554_2",
                        charset="utf8")
 cur = conn.cursor()
 
