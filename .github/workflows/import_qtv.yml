@@ -1,0 +1,52 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: import qtvDir auto
+
+on:
+  schedule:
+    - cron: '0 3 * * *'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.9"
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install xml.dom.minidom
+        pip install parse
+        pip install lxml      
+        pip install os
+        pip install pymysql
+        pip install datetime
+        pip install shutil
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Run scrap
+      run: |        
+        python3 import_qtvDir.py
+        ls
+    - name: Push
+      run: |
+        git config --global user.email "banalytics.contact@gmail.com"
+        git config --global user.name "GroupeB"
+        git config --global push.default simple
+        git status
+        git remote rm origin
+        git remote add origin https://BAnalyticsGpB:$GH_token_public_repo@github.com/BAnalyticsGpB/qtvDir.git
+        echo "====================================="
+        git add Data/*.zip
+        git status
+        echo "====================================="        
+        git commit -m "import qtv"
+        git status
+        echo "====================================="        
+        git push origin HEAD:main
+
