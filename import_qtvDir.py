@@ -23,7 +23,7 @@ cur = conn.cursor()
 # dirpath: 文件夹路径(chemin de fichier)，filename: 文件名(nom du dossier)
 # 找到今天以外的文件夹路径path
 path = ""
-for dirpath, dirnames, filenames in os.walk("..\\qtv_test"):
+for dirpath, dirnames, filenames in os.walk("Data"):
     for dirname in dirnames:
         date = dirname.split("_")
         reussir = False
