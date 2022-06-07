@@ -12,17 +12,17 @@ today = now.strftime("%Y%m%d")
 print(today)
 
 # 连接数据库 connecter la bdd
-conn = pymysql.connect(host="etu-web2.ut-capitole.fr",
+'''conn = pymysql.connect(host="etu-web2.ut-capitole.fr",
                        user="21806554",
                        passwd="T006I0",
                        db="db_21806554_2",
-                       charset="utf8")
+                       charset="utf8")'''
 
-'''conn = pymysql.connect(host="localhost",
+conn = pymysql.connect(host="192.168.56.1",
                        user="root",
                        passwd="",
                        db="ed_bisonfute",
-                       charset="utf8")'''
+                       charset="utf8")
 
 cur = conn.cursor()
 
