@@ -5,7 +5,7 @@ name: qtvDir auto
 
 on:
   schedule:
-    - cron: '6,12,18 * * * *'
+    - cron: '6,12,18,24,30,36,42,48,54 * * * *'
 
 jobs:
   build:
